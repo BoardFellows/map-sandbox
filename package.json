@@ -1,0 +1,24 @@
+{
+  "name": "map-sandbox",
+  "version": "0.1.0",
+  "description": "Built to play with custom google maps styles",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoardFellows/map-sandbox.git"
+  },
+  "author": "Frazier Mork <fraziermork@gmail.com> (https://frazier-fibonacci.herokuapp.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BoardFellows/map-sandbox/issues"
+  },
+  "homepage": "https://github.com/BoardFellows/map-sandbox#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "nodemon": "^1.9.2"
+  }
+}
