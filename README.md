@@ -8,3 +8,6 @@ This is project built to assess the feasibility of using google maps to generate
 (http://www.mapstylr.com/map-style-editor/)
 
 [This has a lot of prebuilt themes](https://snazzymaps.com/)
+
+
+[Decided to use this style](https://snazzymaps.com/style/9470/muted)
