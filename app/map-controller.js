@@ -11,9 +11,11 @@
     vm.coords             = require(__dirname + '/coords.js');
     vm.mapStyle           = require(__dirname + '/map-style.js');
     vm.map                = null;
+    vm.mapMarkers         = [];
     // vm.mapHolder          = $document.find('#map_canvas');//[0];
     vm.mapHolder          = angular.element(document.querySelector('#map_canvas'))[0];
     vm.initialize         = initialize;
+    vm.addListeners       = addListeners;
     vm.mapProps           = {
       center: new google.maps.LatLng(51.506393, -0.127739), 
       zoom:13, 
@@ -36,8 +38,24 @@
       $log.log(vm.mapProps);
       $log.log(vm.mapHolder);
       $log.log(vm.map);
+      vm.addListeners();
     }
     
+    
+    function addListeners() {
+      $log.info('MapController addListeners');
+      vm.map.addListener('click', function(e) {
+        $log.log(e);
+        $log.log(e.latLng.toString());
+        var marker = new google.maps.Marker({
+          position: e.latLng,
+          map: vm.map, 
+          title: 'hello world'
+        });
+        vm.mapMarkers.push(marker);
+      });
+      
+    }
     
   }
   
