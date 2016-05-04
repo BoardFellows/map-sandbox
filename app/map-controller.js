@@ -16,6 +16,7 @@
     vm.mapHolder          = angular.element(document.querySelector('#map_canvas'))[0];
     vm.initialize         = initialize;
     vm.addListeners       = addListeners;
+    vm.clearMarkers       = clearMarkers;
     vm.mapProps           = {
       center: new google.maps.LatLng(51.506393, -0.127739), 
       zoom:13, 
@@ -53,6 +54,15 @@
           title: 'hello world'
         });
         vm.mapMarkers.push(marker);
+      });
+      
+    }
+    
+    function clearMarkers() {
+      $log.info('MapController clearMarkers');
+      vm.mapMarkers.forEach((marker) => {
+        marker.setMap(null);
+        marker = null;
       });
       
     }
