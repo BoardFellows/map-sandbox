@@ -1,11 +1,38 @@
 (function(){
   var mapStyle = [
+    // {
+    //   featureType: "administrative",
+    //   elementType: "labels.text.fill",
+    //   stylers: [
+    //     {
+    //       color: "#888888"
+    //     }
+    //   ]
+    // },
+    // {
+    //   featureType: "administrative.locality",
+    //   elementType: "labels",
+    //   stylers: [
+    //     {
+    //       visibility: "on"
+    //     }
+    //   ]
+    // },
+    {
+      featureType: "administrative",
+      elementType: "labels",
+      stylers: [
+        {
+          visibility: "off"
+        }
+      ]
+    },
     {
       featureType: "administrative",
       elementType: "labels.text.fill",
       stylers: [
         {
-          color: "#444444"
+          visibility: "off"
         }
       ]
     },
@@ -14,7 +41,7 @@
       elementType: "labels",
       stylers: [
         {
-          visibility: "on"
+          visibility: "off"
         }
       ]
     },
@@ -146,14 +173,17 @@
       elementType: "geometry",
       stylers: [
         {
-          saturation: "-33"
-        },
-        {
-          lightness: "22"
-        },
-        {
-          gamma: "2.08"
+          visibility: "off"
         }
+        // {
+        //   saturation: "-33"
+        // },
+        // {
+        //   lightness: "22"
+        // },
+        // {
+        //   gamma: "2.08"
+        // }
       ]
     },
     {
@@ -222,8 +252,14 @@
       center: new google.maps.LatLng(51.506393, -0.127739), 
       zoom:14, 
       mapTypeId: google.maps.MapTypeId.ROADMAP, 
-      styles: mapStyle, 
-      disableDefaultUI: true
+      styles: mapStyle,
+      disableDefaulUI: true,
+      zoomControl: true,
+      mapTypeControl: false,
+      scaleControl: true,
+      streetViewControl: false,
+      rotateControl: false,
+      fullScreenControl: false
     },
     
     buildMap() {
