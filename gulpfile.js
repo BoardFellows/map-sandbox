@@ -10,7 +10,7 @@ const PATHS = {
   all:          [__dirname + '/app/**/*'],
   js:           [__dirname + '/app/**/*.js'],
   webpackEntry: [__dirname + '/entry.js', __dirname + '/webpack.config.js'], 
-  html:         [__dirname + '/app/index.html', __dirname + '/frontend/app/**/*.html'],
+  html:         [__dirname + '/app/index.html', __dirname + '/app/**/*.html'],
   css:          [__dirname + '/app/**/*.css', __dirname + '/node_modules/bootstrap/dist/css/bootstrap.min.css'],
   build:        __dirname + '/build/'
 };

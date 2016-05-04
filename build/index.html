@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="map-sandbox-app">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>MAP SANDBOX</title>
+    <link rel="stylesheet" href="bootstrap.min.css" charset="utf-8">
     <link rel="stylesheet" href="style.css" charset="utf-8">
   </head>
   <body>
-    <h1>CUSTOM MAP THEME SANDBOX</h1>
+    <h1>{{ 1 + 1 }}</h1>
+
     
-    <div class="google-map" id="google-map"></div>
+    <main data-ng-view></main>
     
     
     
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
     
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADH9R36RWhN3rKYB78NMpozp82r9Xd5ZY&signed_in=true"></script>
     <script type="text/javascript" src="bundle.js"></script>
+  
   </body>
 </html>
