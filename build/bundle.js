@@ -32032,6 +32032,11 @@
 	      });
 	    }
 
+	    // Will be using svgs to draw the markers for each stop.
+	    // https://developers.google.com/maps/documentation/javascript/symbols
+	    // https://developers.google.com/maps/documentation/javascript/markers#complex_icons
+	    // might look into https://inkscape.org/en/
+
 	    function clearMarkers() {
 	      $log.info('MapController clearMarkers');
 	      vm.mapMarkers.forEach(function (marker) {
