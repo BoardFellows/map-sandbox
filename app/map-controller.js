@@ -17,6 +17,7 @@
     vm.initialize         = initialize;
     vm.addListeners       = addListeners;
     vm.clearMarkers       = clearMarkers;
+    vm.genSvg             = require(__dirname + '/svg-drawer.js');
     vm.mapProps           = {
       center: new google.maps.LatLng(51.506393, -0.127739), 
       zoom:13, 
@@ -42,20 +43,42 @@
       vm.addListeners();
     }
     
+    // for simple markers
+    // function addListeners() {
+    //   $log.info('MapController addListeners');
+    //   vm.map.addListener('click', function(e) {
+    //     $log.log(e);
+    //     $log.log(e.latLng.toString());
+    //     var marker = new google.maps.Marker({
+    //       position: e.latLng,
+    //       map: vm.map, 
+    //       title: 'hello world'
+    //     });
+    //     vm.mapMarkers.push(marker);
+    //   });
+    //   
+    // }
+    
+    
     
     function addListeners() {
       $log.info('MapController addListeners');
       vm.map.addListener('click', function(e) {
-        $log.log(e);
+        // $log.log(e);
         $log.log(e.latLng.toString());
+        var svgTxt = vm.genSvg('hi', { taxi: true, bus: true, metro: false, water: false});
+        $log.info(svgTxt);
         var marker = new google.maps.Marker({
           position: e.latLng,
-          map: vm.map, 
-          title: 'hello world'
+          map: vm.map,
+          icon: {
+            url: vm.genSvg('1', { taxi: true, bus: true, metro: true, water: false}), 
+            // url: vm.genSvg(), 
+            anchor: new google.maps.Point(0,0)  
+          }
         });
         vm.mapMarkers.push(marker);
       });
-      
     }
     
     // Will be using svgs to draw the markers for each stop. 
